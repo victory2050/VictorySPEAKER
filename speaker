@@ -89,7 +89,6 @@
         border: 0;
       }
     `;
-
     const iframe = document.createElement("iframe");
     iframe.allowFullscreen = !1;
     iframe.title = "Streaming Embed";
