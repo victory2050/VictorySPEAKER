@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Victory VRO</title>
+
+  <!-- PROTECCIÓN -->
+  <script>
+    if (sessionStorage.getItem("victory_access") !== "ok") {
+      window.location.href = "index.html";
+    }
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background:
+        linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
+        url("https://raw.githubusercontent.com/victory2050/Interactive/main/Ondas3.png")
+        center / cover no-repeat fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      color: #6c63ff;
+    }
+
+    /* CÍRCULO */
+    .avatar-circle {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 30px auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .avatar-circle iframe {
+      width: 140%;
+      height: 140%;
+      transform: translate(-20%, -20%);
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>VRO</h1>
+
+    <div class="avatar-circle">
+      <iframe
+        src="https://embed.liveavatar.com/v1/6b1ff7cd-4236-4b9f-893d-014d38f231ac"
+        allow="microphone">
+      </iframe>
+    </div>
+  </div>
+</body>
+</html>
