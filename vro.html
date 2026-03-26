@@ -1,99 +1,208 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Victory VRO</title>
 
-  <!-- PROTECCIÓN -->
   <script>
     if (sessionStorage.getItem("victory_access") !== "ok") {
       window.location.href = "index.html";
     }
-
-    }
-  </style>
-</head>
-<body>
-  
-  <h1 style="text-align: left; font-size: 4rem; margin-top: 100px; margin-bottom: 0px; color: #6c63ff">
-    <br> 🔐🤖📅☎️🤖⌯⌲🗓️⋆｡˚🤖?
-</h1>
-  <p style="text-align: left; max-width: 700px; margin: 700 auto 700px; font-size: 1rem; color: #6c63ff";">
-  <br> 🟣 Test It.
-  <br> 🟣 Indage sobre su metodología.
-  <br> 🟣 Permítale una pausa antes de responder. Interrúmpale cuando quiera
-  <br> 🟣 Su conversación es privada. No se almacenan datos 😉
-</p>
-<a href="https://www.victory2050.com/playbook2026" class="cta">
-  📖 Aquí podrá encontrar el Playbook Victory 2026.
-</a>
-
-</a>
-<img
-  src="https://raw.githubusercontent.com/victory2050/Interactive/main/Ondas3.png"
-  alt="Background Victory"
-  class="bg"
-/>
-<div class="mini-links">
-  <a href="https://www.victory2050.com/es">Ir a Página Inicio</a>
-  <a href="mailto:onboarding@thevictory.games">Correo Contacto</a>
-</div>
-</a>
-    
   </script>
 
   <style>
+    :root {
+      --primary: #6c63ff;
+      --secondary: #2f2a8f;
+      --text: #6c63ff;
+      --overlay: rgba(255, 255, 255, 0.82);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
       background:
-        linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
+        linear-gradient(var(--overlay), var(--overlay)),
         url("https://raw.githubusercontent.com/victory2050/Interactive/main/Ondas3.png")
         center / cover no-repeat fixed;
+      color: var(--text);
+    }
+
+    .page {
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 200vh;
+      padding: 48px 32px;
     }
 
-    .container {
-      text-align: center;
+    .layout {
+      width: 100%;
+      max-width: 1280px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 56px;
+      flex-wrap: wrap;
     }
 
-    h1 {
-      color: #6c63ff;
+    .content {
+      flex: 1 1 520px;
+      max-width: 700px;
     }
 
-    /* CÍRCULO */
-    .avatar-circle {
-      width: 320px;
-      height: 320px;
-      border-radius: 50%;
+    .emoji-title {
+      margin: 0 0 20px 0;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.1;
+      color: var(--primary);
+      text-align: left;
+    }
+
+    .intro {
+      margin: 0 0 28px 0;
+      max-width: 700px;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--primary);
+      text-align: left;
+    }
+
+    .cta {
+      display: inline-block;
+      margin: 0 0 22px 0;
+      padding: 14px 24px;
+      background-color: var(--primary);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      transition: opacity 0.2s ease;
+    }
+
+    .cta:hover {
+      opacity: 0.92;
+    }
+
+    .mini-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .mini-links a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .mini-links a:hover {
+      text-decoration: underline;
+    }
+
+    .avatar-side {
+      flex: 0 1 480px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .avatar-frame {
+      width: 100%;
+      max-width: 430px;
+      aspect-ratio: 1 / 1;
+      border-radius: 28px;
       overflow: hidden;
-      margin: 60px auto;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
+      background: #ececf3;
     }
 
-    .avatar-circle iframe {
-      width: 140%;
-      height: 140%;
-      transform: translate(-20%, -20%);
+    .avatar-frame iframe {
+      width: 100%;
+      height: 100%;
       border: none;
+      display: block;
+    }
+
+    @media (max-width: 980px) {
+      .page {
+        padding: 32px 20px;
+      }
+
+      .layout {
+        gap: 36px;
+      }
+
+      .content {
+        max-width: 100%;
+      }
+
+      .avatar-side {
+        flex-basis: 100%;
+      }
+
+      .avatar-frame {
+        max-width: 380px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .emoji-title {
+        font-size: 2.2rem;
+      }
+
+      .intro {
+        font-size: 0.96rem;
+        line-height: 1.7;
+      }
+
+      .avatar-frame {
+        max-width: 320px;
+      }
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
-    <h1>VRO</h1>
+  <main class="page">
+    <section class="layout">
+      <div class="content">
+        <h1 class="emoji-title">🔐🤖📅☎️🤖⌯⌲🗓️⋆｡˚🤖?</h1>
 
-    <div class="avatar-circle">
-      <iframe
-        src="https://embed.liveavatar.com/v1/6b1ff7cd-4236-4b9f-893d-014d38f231ac"
-        allow="microphone">
-      </iframe>
-    </div>
-  </div>
+        <p class="intro">
+          🟣 Test it.<br>
+          🟣 Indague sobre su metodología.<br>
+          🟣 Permítale una pausa antes de responder. Interrúmpalo cuando quiera.<br>
+          🟣 Su conversación es privada. No se almacenan datos 😉
+        </p>
+
+        <a href="https://www.victory2050.com/playbook2026" class="cta">
+          📖 Aquí podrá encontrar el Playbook Victory 2026.
+        </a>
+
+        <div class="mini-links">
+          <a href="https://www.victory2050.com/es">Ir a Página Inicio</a>
+          <a href="mailto:onboarding@thevictory.games">Correo Contacto</a>
+        </div>
+      </div>
+
+      <div class="avatar-side">
+        <div class="avatar-frame">
+          <iframe
+            src="https://embed.liveavatar.com/v1/6b1ff7cd-4236-4b9f-893d-014d38f231ac"
+            allow="microphone"
+            title="Victory VRO">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
