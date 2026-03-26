@@ -1,1 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omar Romero Victory Games LLC 2050</title>
 
+  <style>
+    :root {
+      --primary: #6c63ff;
+      --secondary: #2f2a8f;
+      --text: #6c63ff;
+      --bg-overlay: rgba(255, 255, 255, 0.80);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      width: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+    }
+
+    body {
+      background:
+        linear-gradient(var(--bg-overlay), var(--bg-overlay)),
+        url("https://raw.githubusercontent.com/victory2050/Interactive/main/Ondas3.png") center center / cover no-repeat fixed;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 48px;
+    }
+
+    .layout {
+      width: 100%;
+      max-width: 1300px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .content {
+      max-width: 700px;
+      z-index: 1;
+    }
+
+    h1 {
+      text-align: left;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      margin: 0 0 16px 0;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+
+    p {
+      text-align: left;
+      max-width: 700px;
+      margin: 0 0 24px 0;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--primary);
+    }
+
+    .cta {
+      margin-bottom: 20px;
+      padding: 12px 24px;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-block;
+      width: fit-content;
+      max-width: 100%;
+      text-align: left;
+    }
+
+    .cta:hover {
+      opacity: 0.92;
+    }
+
+    .mini-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    .mini-links a {
+      color: var(--secondary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .mini-links a:hover {
+      text-decoration: underline;
+    }
+
+    .avatar-wrap {
+      flex: 0 0 420px;
+      max-width: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .avatar-frame {
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      background: #fff;
+    }
+
+    @media (max-width: 900px) {
+      body {
+        padding: 24px;
+        align-items: flex-start;
+      }
+
+      .layout {
+        align-items: flex-start;
+      }
+
+      .avatar-wrap {
+        flex-basis: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <div class="content">
+      <h1>✌️💻🎧😨🤖</h1>
+
+      <p>
+        🟣 Ponga a prueba este agente.<br />
+        🟣 Indague qué puede hacer Victory por su organización.<br />
+        🟣 Permítale una pausa antes de responder. Interrúmpalo cuando quiera.<br />
+        🟣 Su conversación es privada. No se almacenan datos 😉
+      </p>
+
+      <a href="https://www.victory2050.com/playbook2026" class="cta">
+        📖 Aquí podrá encontrar el Playbook Victory 2026.
+      </a>
+
+      <div class="mini-links">
+        <a href="https://www.victory2050.com/es">Ir a Página Inicio</a>
+        <a href="mailto:onboarding@thevictory.games">Correo Contacto</a>
+      </div>
+    </div>
+
+    <div class="avatar-wrap">
+      <iframe
+        class="avatar-frame"
+        src="https://embed.liveavatar.com/v1/6b1ff7cd-4236-4b9f-893d-014d38f231ac"
+        allow="microphone"
+        title="LiveAvatar Embed">
+      </iframe>
+    </div>
+  </div>
+</body>
+</html>
