@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Acceso | Victory</title>
+
+  <style>
+    :root {
+      --primary: #6c63ff;
+      --secondary: #2f2a8f;
+      --bg-overlay: rgba(255,255,255,0.82);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background:
+        linear-gradient(var(--bg-overlay), var(--bg-overlay)),
+        url("https://raw.githubusercontent.com/victory2050/Interactive/main/Ondas3.png")
+        center / cover no-repeat fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      padding: 32px;
+      border-radius: 16px;
+      width: 320px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      color: var(--primary);
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Acceso</h1>
+
+    <form id="loginForm">
+      <input type="password" id="password" placeholder="Contraseña" required>
+      <button type="submit">Entrar</button>
+      <div class="error" id="error"></div>
+    </form>
+  </div>
+
+  <script>
+    const ACCESS_PASSWORD = "victory2050";
+
+    document.getElementById("loginForm").addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const pass = document.getElementById("password").value;
+
+      if(pass === ACCESS_PASSWORD){
+        sessionStorage.setItem("victory_access", "ok");
+        window.location.href = "vro.html";
+      } else {
+        document.getElementById("error").innerText = "Clave incorrecta";
+      }
+    });
+  </script>
+</body>
+</html>
